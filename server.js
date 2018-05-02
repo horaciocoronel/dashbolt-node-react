@@ -1,6 +1,17 @@
 const express = require('express');
-const app = express();
 const path = require('path');
+const bodyParser = require('body-parser');
+
+const pictures = require('./routes/api/pictures');
+
+const app = express();
+
+// Body parser middleware
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+
+// Use Routes
+app.use('/api/pictures', pictures);
 
 // Serve static assets if in production 
 if(process.env.NODE_ENV=== 'production') {
