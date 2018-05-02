@@ -1,0 +1,17 @@
+{
+  "name": "dashbolt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix-client",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Horacio Coronel",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
