@@ -1,4 +1,5 @@
 const express = require('express');
+const mongoose = require('mongoose');
 const path = require('path');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv').config();
@@ -11,6 +12,15 @@ const app = express();
 // Body parser middleware
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+
+// DB Config
+const db = require('./config/keys').mongoURI;
+
+// Connect to mongoDB
+mongoose
+	.connect(db)
+	.then(() => console.log('MongoDB connected'))
+	.catch(err => console.log(err));
 
 // Use Routes
 app.use('/api/pictures', pictures);
