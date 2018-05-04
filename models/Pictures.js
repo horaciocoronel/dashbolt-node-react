@@ -25,4 +25,4 @@ const PicturesSchema = new Schema({
   }
 });
 
-module.exports = User = mongoose.model('pictures', PicturesSchema);
+module.exports = Picture = mongoose.model('pictures', PicturesSchema);
