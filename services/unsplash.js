@@ -15,27 +15,51 @@ mongoose
 	.then(() => console.log('MongoDB connected'))
 	.catch(err => console.log(err));
 
-
-export const getPictures = () => {
+// Delete Collection
+const deletePicturesCollection = () => {
+  mongoose.connection.collections['pictures'].drop(
+    function(err) {
+      console.log('collection dropped');
+    }
+  );
+}
+  
+// Get Pictures
+const getPictures = () => {
   axios.get(`${baseURL}/?client_id=${keys.unsplashAccessKey}&featured=true&count=30&query=sky%20morning&orientation=landscape`)
   .then(function (response) {
-    response.data.map(photo => {
-      const newPicture = new Pictures({
-        photoid: photo.id,
-        photourl: photo.urls.full,
-        username: photo.user.username,
-        fullname: photo.user.name,
-        likes: photo.likes
-      });
-      new Pictures(newPicture)
-        .save()
-        .then(profile => console.log(newPicture))
-        .then(function (response) {
-          mongoose.disconnect();
+    if(response.data.length === 30) {
+      // Delete old collection 
+        deletePicturesCollection();
+      // Map response
+      response.data.map(photo => {
+        const newPicture = new Pictures({
+          photoid: photo.id,
+          photourl: photo.urls.full,
+          username: photo.user.username,
+          fullname: photo.user.name,
+          likes: photo.likes
         });
-    });
+
+        // Save new Collection
+        new Pictures(newPicture)
+          .save()
+          .then(profile => console.log(newPicture))
+          .then(function (response) {
+            mongoose.disconnect();
+          })
+        
+      });
+    }
   })
   .catch(function (error) {
     console.log(error);
   });
 };
+
+getPictures();
+
+module.exports = {
+  getPictures,
+  deletePicturesCollection
+}
