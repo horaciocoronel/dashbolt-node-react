@@ -26,7 +26,7 @@ const deletePicturesCollection = () => {
   
 // Get Pictures
 const getPictures = () => {
-  axios.get(`${baseURL}/?client_id=${keys.unsplashAccessKey}&featured=true&count=30&query=sky%20morning&orientation=landscape`)
+  axios.get(`${baseURL}/?client_id=${keys.unsplashAccessKey}&featured=true&count=30&query=landscape%20morning&orientation=landscape`)
   .then(function (response) {
     if(response.data.length === 30) {
       // Delete old collection 
