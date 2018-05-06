@@ -3,3 +3,4 @@
 .env
 /config/keys_prod.js
 /config/keys_dev.js
+/playground
