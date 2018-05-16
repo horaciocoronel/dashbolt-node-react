@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik:400,500,700');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #000;
+  font-family: Rubik, Verdana, Helvetica, sans-serif;
+}
+
+.container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-image: url('https://images.unsplash.com/reserve/unsplash_524010c76b52a_1.JPG?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjIzOTg1fQ&s=5e9e9726d1ddcc3749376b15936b1530');
+  background-size: cover;
+  background-position: center center;
+  
+}
+
+.row {
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: nowrap;
+}
+
+.top, .middle, .bottom {
+  margin: 0;
+  flex: 1;
+}
+
+.top {
+  min-height: 9vh;
+  height: 8vh;
+}
+
+.middle {
+  height: 82vh;
+}
+
+.bottom {
+  height: 9vh;
+  min-height: 9vh;
+  flex-shrink: 0;
+}
+
+.center {
+  min-width: 50vw;
+  text-align: center;
+  color: yellow;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.center .time {
+  font-size: 125px;
+  text-shadow: 0 0 25px rgba(255, 255, 255, 0.856);
+}
+
+.center .greeting {
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.856);
+  font-size: 45px;
+}
