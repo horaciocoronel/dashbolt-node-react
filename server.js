@@ -6,6 +6,7 @@ const dotenv = require('dotenv').config();
 
 
 const pictures = require('./routes/api/pictures');
+const quotes = require('./routes/api/quotes');
 
 const app = express();
 
@@ -24,6 +25,7 @@ mongoose
 
 // Use Routes
 app.use('/api/pictures', pictures);
+app.use('/api/quotes', quotes);
 
 // Serve static assets if in production 
 if(process.env.NODE_ENV=== 'production') {
