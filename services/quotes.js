@@ -20,7 +20,7 @@ mongoose
 
 const populateQuotes = () => {
     quotesData.map(quote => {
-      if(quote.quoteText.length <= 100) {
+      if(quote.quoteText.length <= 94) {
         const newQuote = new Quote({
           quoteAuthor: quote.quoteAuthor,
           quoteText: quote.quoteText
