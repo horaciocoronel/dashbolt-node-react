@@ -13,6 +13,7 @@ router.get('/test', (req, res) => res.json({msg: 'Pictures works'}));
 // @desc 		List all Pictures
 // @access	Public
 router.get('/all', (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');  
   Pictures.find()
   .populate()
   .then(pictures => {
