@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Clock from 'react-live-clock';
+import Greeting from '../_Greetings';
 
 
 export class MiddleCenter extends Component {
@@ -11,11 +12,10 @@ export class MiddleCenter extends Component {
           <div className="time">
             <Clock format={'HH:mm'} ticking={true}/>
           </div>
-          <div className="greeting">
-            Good morning, Horacio
-          </div>
+          
+            <Greeting userName={this.props.userName} />
           <div className="focus">
-            focus
+            
           </div>
         </div>
         <div className="middle">Feature</div>
