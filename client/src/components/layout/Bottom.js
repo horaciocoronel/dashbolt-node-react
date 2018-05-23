@@ -27,7 +27,7 @@ export class BottomCenter extends Component {
     return (
       <div className="row">
         <div className="bottom">
-          <ImageCopyright />
+          <ImageCopyright imageData={this.props.imageData} />
         </div>
         <div className="bottom center">
         <h3>{this.state.quoteText}</h3>
