@@ -8,7 +8,9 @@ function getPictures() {
     .then(res => res.json())
     .then(
       result => {
-        return result
+        let pictureIndex = Math.floor((Math.random() * 30) + 1);
+        let picture = (result[pictureIndex-1])
+        return picture
       }
     )
     .catch(function (error) {
