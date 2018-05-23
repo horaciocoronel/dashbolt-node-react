@@ -16,6 +16,7 @@ module.exports = {
           loader: 'babel-loader'
         }
       },
+      { test: /(\.css$)/, loaders: ['style-loader', 'css-loader'] },
       {
         test: /\.scss$/,
         use: [
@@ -29,7 +30,17 @@ module.exports = {
             loader: "sass-loader" // compiles Sass to CSS
           }
         ]
-      }
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [{
+            loader: 'file-loader',
+            options: {
+                name: '[name].[ext]',
+                outputPath: 'fonts/'
+            }
+        }]
+    }
     ]
   },
   plugins: [
