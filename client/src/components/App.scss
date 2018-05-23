@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Rubik:400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500,700');
 
 * {
   margin: 0;
@@ -13,7 +13,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  background-image: url('https://images.unsplash.com/reserve/unsplash_524010c76b52a_1.JPG?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjIzOTg1fQ&s=5e9e9726d1ddcc3749376b15936b1530');
+  // background-image: url('https://images.unsplash.com/reserve/unsplash_524010c76b52a_1.JPG?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjIzOTg1fQ&s=5e9e9726d1ddcc3749376b15936b1530');
   background-size: cover;
   background-position: center center;
   
@@ -67,4 +67,23 @@
 .bottom h3 {
   font-weight: 400;
   padding: 0 15px;
+}
+
+.bottom .left {
+  position: relative;
+}
+
+.bottom .unsplash-copy {
+	padding: 10px;
+	margin: auto;
+	font-size: 10px;
+  font-weight: 300;
+  position: absolute;
+  bottom: 0px;
+  left: 0px; 
+}
+
+.bottom .unsplash-copy a {
+	color: white;
+	font-weight: 500;
 }
