@@ -56,12 +56,13 @@
 }
 
 .center .time {
-  font-size: 125px;
-  text-shadow: 0 0 25px rgba(255, 255, 255, 0.856);
+  font-size: 145px;
+  text-shadow: 1px 1px 6px #898989;
+
 }
 
 .center .greeting {
-  text-shadow: 0 0 15px rgba(255, 255, 255, 0.856);
+  text-shadow: 1px 1px 6px #898989;
   font-size: 45px;
 }
 
@@ -87,4 +88,48 @@
 .bottom .unsplash-copy a {
 	color: white;
 	font-weight: 500;
+}
+
+.top .weather-city {
+  text-align: right;
+  padding: 0 25px;
+}
+
+.top .weather-info {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 70px;
+}
+
+
+.top .weather-icon, 
+.top .weather-temperature {
+  color: white;
+	height: 100%;
+	font-size: 1.5em;
+	text-shadow: 1px 1px 2px #898989;
+  padding: 0.6em 0 0 0;
+}
+
+.top .weather-temperature {
+  padding-top: 0;
+}
+
+.bottom .created-by {
+  position: absolute;
+  bottom: 10px;
+  right: 0px;
+	font-size: 0.7em;
+	text-align: right;
+	padding: 0 2em;
+  font-weight: 300;
+}
+
+.bottom a {
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.created-by img {
+  height: 15px;
 }
