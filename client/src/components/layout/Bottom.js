@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {getQuotes} from '../../utils/Quotes';
 import ImageCopyright from '../bottom/ImageCopyright';
+import Contact from '../bottom/_Contact';
 
 export class BottomCenter extends Component {
   constructor(props) {
@@ -34,7 +35,7 @@ export class BottomCenter extends Component {
         <h6>{this.state.quoteAuthor}</h6>
         
         </div>
-        <div className="bottom">a</div>
+        <Contact />
     </div>
     )
   }
