@@ -2,7 +2,6 @@ import React from 'react';
 import WeatherIcon from 'react-icons-weather';
 
 const Weather = (props) => {
-  // console.log('props', props)
     return (
       <div className="top right">
         <div className="weather-info">
