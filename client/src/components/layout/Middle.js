@@ -7,7 +7,7 @@ export class MiddleCenter extends Component {
   render() {
     return (
       <div className="row">
-        <div className="middle"></div>
+        <div className="middle hm"></div>
         <div className="middle center">
           <div className="time">
             <Clock format={'HH:mm'} ticking={true}/>
@@ -18,7 +18,7 @@ export class MiddleCenter extends Component {
             
           </div>
         </div>
-        <div className="middle"></div>
+        <div className="middle hm"></div>
       </div>
     )
   }
