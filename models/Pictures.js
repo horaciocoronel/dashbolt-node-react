@@ -22,6 +22,10 @@ const PicturesSchema = new Schema({
   likes: {
     type: String,
     required: false
+  },
+  timeofday: {
+    type: String,
+    required: true
   }
 });
 

@@ -2,6 +2,7 @@ const axios = require('axios');
 const mongoose = require('mongoose');
 const keys = require('../config/keys');
 const baseURL = "https://api.unsplash.com/photos/random";
+const timeOfDay = require('../utils/timeOfDay.js');
 
 // Load Pictures model
 const Pictures = require('../models/Pictures');
@@ -26,7 +27,8 @@ const deletePicturesCollection = () => {
   
 // Get Pictures
 const getPictures = () => {
-  axios.get(`${baseURL}/?client_id=${keys.unsplashAccessKey}&featured=true&count=30&query=landscape%20morning&orientation=landscape`)
+  let keyword = timeOfDay.timeOfDay;
+  axios.get(`${baseURL}/?client_id=${keys.unsplashAccessKey}&featured=true&count=30&query=${keyword}&orientation=landscape`)
   .then(function (response) {
     if(response.data.length === 30) {
       // Delete old collection 
@@ -38,7 +40,8 @@ const getPictures = () => {
           photourl: photo.urls.full,
           username: photo.user.username,
           fullname: photo.user.name,
-          likes: photo.likes
+          likes: photo.likes,
+          timeofday: keyword
         });
 
         // Save new Collection
