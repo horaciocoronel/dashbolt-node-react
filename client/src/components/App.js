@@ -40,7 +40,9 @@ export class App extends Component {
   fetchPictures() {
     getPictures()
       .then(res => {
-        this.setState({actualImage: res})
+        if(res) {
+          this.setState({actualImage: res})
+        }
       })
   }
 
