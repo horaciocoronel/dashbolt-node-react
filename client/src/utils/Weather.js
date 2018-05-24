@@ -18,7 +18,7 @@ async function getLocation() {
 }
 
 async function getWeatherApi(location) {
-  const url = `${DARK_SKY_URL}/${location.lat},${location.lon}`;
+  const url = `${DARK_SKY_URL}/${location.lat},${location.lon}?units=si`;
   return axios.get(url)
     .then(res => res.data.currently)
 }
