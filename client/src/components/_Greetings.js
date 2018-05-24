@@ -3,7 +3,6 @@ import React from 'react';
 const Greetings = (props) => {
   let currentTime = new Date();
   let currentHours = currentTime.getHours();
-  // console.log(currentTime)
   
   switch(true) {
     case currentHours <= 4:
@@ -35,7 +34,6 @@ const Greetings = (props) => {
       )
         break;
     default:
-    console.log(currentHours);
       return (
         <div className="greeting">
           Hello{props.userName}!
