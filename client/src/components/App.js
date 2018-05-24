@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 import Middle from './layout/Middle';
 import Bottom from './layout/Bottom';
 import Top from './layout/Top';
-import {getUserName} from '../utils/UserInput';
 import {getPictures} from '../utils/Pictures';
 import {getWeather, getLocation} from '../utils/Weather';
-import {imgStateData} from '../utils/DefaultStateData';
 
 import './App.scss';
 
@@ -60,7 +58,6 @@ export class App extends Component {
   }
 
   render() {
-    // console.log('render',imgStateData)
     return (
       <div className="container" style={{backgroundImage: `url(${this.state.actualImage.photourl})`}}>
         <Top weather={this.state.weather} city={this.state.city} />
