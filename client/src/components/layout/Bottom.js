@@ -27,15 +27,16 @@ export class BottomCenter extends Component {
   render() {
     return (
       <div className="row">
-        <div className="bottom">
-          <ImageCopyright imageData={this.props.imageData} />
+        <div className="bottom-container">
+          <div className="bottom">
+            <ImageCopyright imageData={this.props.imageData} />
+          </div>
+          <div className="bottom center">
+            <h3>{this.state.quoteText}</h3>
+            <h6>{this.state.quoteAuthor}</h6>
+          </div>
+          <Contact />
         </div>
-        <div className="bottom center">
-        <h3>{this.state.quoteText}</h3>
-        <h6>{this.state.quoteAuthor}</h6>
-        
-        </div>
-        <Contact />
     </div>
     )
   }
