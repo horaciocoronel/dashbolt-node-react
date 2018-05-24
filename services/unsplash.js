@@ -24,6 +24,12 @@ const deletePicturesCollection = () => {
     }
   );
 }
+// Delete picture from timeOfDay
+const deletePictures = (timeofday) => {
+  mongoose.connection.collections['pictures'].deleteMany(
+    {timeofday: timeofday}, () => console.log(`Deleted pictures from ${timeofday}`)
+  );
+}
   
 // Get Pictures
 const getPictures = () => {
@@ -32,7 +38,7 @@ const getPictures = () => {
   .then(function (response) {
     if(response.data.length === 30) {
       // Delete old collection 
-        deletePicturesCollection();
+        deletePictures(keyword);
       // Map response
       response.data.map(photo => {
         const newPicture = new Pictures({
