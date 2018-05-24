@@ -2,7 +2,7 @@ require('dotenv').config();
 const LOCATION_URL = "http://ip-api.com/json";
 const DARK_SKY_URL = `https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${process.env.REACT_APP_DARK_SKY}`;
 import axios from 'axios';
-export {getWeather};
+export {getWeather, getLocation};
 
 async function getLocation() {
   const url = `${LOCATION_URL}`;
@@ -10,6 +10,7 @@ async function getLocation() {
   return axios.get(url)
     .then(result => {
       location = {
+        city: result.data.city,
         lat: result.data.lat,
         lon: result.data.lon
       }
