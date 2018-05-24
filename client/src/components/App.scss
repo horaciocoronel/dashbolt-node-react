@@ -40,7 +40,7 @@
   height: 82vh;
 }
 
-.bottom {
+.bottom-container {
   height: 9vh;
   min-height: 9vh;
   flex-shrink: 0;
@@ -132,4 +132,77 @@
 
 .created-by img {
   height: 15px;
+}
+
+
+
+/* Small devices (portrait phones, up to 375px) */
+@media (max-width: 375px) {  
+//  * {
+//    color: red;
+//  }
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  // flex-wrap: nowrap;
+}
+ .top {
+   height: 8hv;
+ }
+ .middle {
+  height: 62vh;
+}
+ .bottom {
+   display: flex;
+   flex-grow: 1;
+   flex-direction: column;
+   justify-content: flex-end;
+ }
+
+ .bottom .created-by {
+  position: relative;
+	font-size: 0.7em;
+	text-align: right;
+  font-weight: 300;
+  position: absolute;
+  bottom: 10px;
+}
+
+.bottom .unsplash-copy {
+  position: relative;
+	padding: 0px;
+	margin: auto;
+	font-size: 10px;
+  font-weight: 300;
+}
+.hm {
+  display: none;
+}
+.bottom h3 {
+  text-align: center;
+  margin: 0 auto;
+  width: 100vw;
+}
+
+}
+
+/* Small devices (landscape phones, 544px and up) */
+@media (min-width: 375px) {  
+ .bottom h3 {
+   text-align: center;
+   margin: 0 auto;
+   width: 100vw;
+ }
+ .bottom .created-by {
+   position: absolute;
+   bottom: 10px;
+ }
+}
+ 
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {  
+  .hm {
+    display: block;
+  }
 }
